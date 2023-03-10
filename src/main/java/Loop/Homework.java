@@ -98,24 +98,4 @@ public class Homework {
             System.out.println();
         }
     }
-//    public static void printSquareBorder() {
-//        for (int i = 0; i < size; i++) {
-//            for (int j = 0; j < i; j++) {
-//                if (i == 0 || i == size - 1 || j == 0 || j == i) {
-//                    System.out.print("*  ");
-//                }
-//            }
-//            System.out.println();
-//        }
-//    }
-//    public static void printSquareDiagonal() {
-//       for (int  i = 0; i < size; i++) {
-//           for (int j = 0; j < i; j++) {
-//               if (i == j || i+j == i - 1) {
-//                   System.out.print("*  ");
-//               }
-//           }
-//           System.out.println();
-//       }
-//    }
 }
