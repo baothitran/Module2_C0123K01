@@ -31,14 +31,16 @@ public class Homework {
                     System.out.printf("Kết quả: %s là giá trị nhỏ nhất \n \n", findMin(a));
                     break;
                 case 4:
+                    System.out.printf("Kết quả: %s \n \n", Arrays.toString(addElement(a,2, 28)));
                     break;
                 case 5:
+                    System.out.printf("Kết quả: %s \n \n", Arrays.toString(removeElement(a, 2)));
                     break;
                 case 6:
                     System.out.printf("Kết quả: %s \n \n", Arrays.toString(mergeArray(a,b)));
                     break;
                 default:
-                    System.out.println("Vui lòng nhập số phù hợp");
+                    System.out.println("Vui lòng nhập số phù hợp \n \n");
             }
             checkActionMenu = true;
         } while (checkActionMenu);
@@ -71,6 +73,26 @@ public class Homework {
             }
         }
         return min;
+    }
+
+    public static int[] addElement(int[] arr, int index, int value) {
+        int[] aNew = Arrays.copyOf(arr, arr.length +1);
+        aNew[index] = value;
+        for (int i = index + 1; i < aNew.length; i++) {
+            aNew[i] = arr[i-1];
+        }
+        return aNew;
+    }
+
+    public static int[] removeElement(int[] arr, int index) {
+        int[] aNew = new int[arr.length - 1];
+        for (int i = 0; i < index; i++) {
+            aNew[i] = arr[i];
+        }
+        for (int j = index + 1; j < arr.length; j++) {
+            aNew[j-1] = arr[j];
+        }
+        return aNew;
     }
 
     public static int[] mergeArray(int[] arr1, int[] arr2) {
