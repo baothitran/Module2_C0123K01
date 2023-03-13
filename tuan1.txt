@@ -42,4 +42,114 @@ Truyền tham chiếu (Pass by Reference):
 Khi truyền tham chiếu vào phương thức, địa chỉ của biến được sao chép vào tham số trong phương thức. Do đó, thay đổi giá trị của tham số trong phương thức sẽ ảnh hưởng đến giá trị của biến ban đầu ở bên ngoài phương thức.
 Ví dụ:
 
-13/03
+13/03/23:
+// Scanner dùng để nhập thông tin
+public static Scanner scanner = new Scanner(System.in);
+
+// In có xuống dòng
+System.out.println();
+
+// Lớp Arrays có phương thức toString dùng để chuyển 1 mảng thành chuỗi
+Arrays.toString(a)
+
+// In có format
+System.out.printf("%s xin chao", "C1222I1");
+
+//Sao chép 1 mảng gốc thành 1 mảng mới theo 1 độ dài cho trước
+Arrays.copyOf(a, a.length + 1);
+
+14/03/23
+
+Đọc thêm và notes:
+Print format trong java
+https://niithanoi.edu.vn/printf-trong-java.html
+
+* Printf: Xuất ra màng hình kết quả đồng thời có thể định dạng được kết quả đó nhờ vào các đối số thích hợp.
+Cú pháp:
+
+System.out.printf(local, format, arguments1, arguments2,…, argumentsn);
+ 
+Trong đó:
+
+- Local: Nếu khác null sẽ được tự động định dạng theo khu vực.
+- format: Quy định chuẩn định dạng đầu ra cho các đối số
+- Các argument: Đối số cần định dạng.
+
++ %c: Ký tự
++ %d: Số thập phân (số nguyên) (cơ số 10)
++ %e: Dấu phẩy động theo cấp số nhân
++ %f: Dấu phẩy động
++ %i: Số nguyên (cơ sở 10)
++ %o: Số bát phân (cơ sở 8)
++ %s: Chuỗi
++ %u: Số thập phân (số nguyên) không dấu
++ %x: Số trong hệ thập lục phân (cơ sở 16)
++ %t: Định dạng ngày / giờ
++ %%: Dấu phần trăm
++ \%: Dấu phần trăm
+
+Ví dụ:
+int age = 30;
+double weight = 65.5;
+System.out.printf("Age: %d, Weight: %.2f", age, weight);
+
+Đoạn mã trên sẽ in ra chuỗi "Age: 30, Weight: 65.50" trên màn hình console.
+
+
+Xem trước: OOP
+https://www.youtube.com/watch?v=tcGNKqhu3GE
++ Từ khóa class, từ khóa new
+Lớp (class) là khuôn mẫu định nghĩa các thuộc tính (properties) và hành vi (behaviors) của các thực thể.
+Ví dụ, đoạn mã sau định nghĩa một lớp "Person" có hai thuộc tính là "name" và "age":
+public class Person {
+    String name;
+    int age;
+}
+Từ khoá "new" được sử dụng để tạo một đối tượng mới của một lớp cụ thể trong Java. Khi bạn tạo một đối tượng,
+bạn cần chỉ định lớp mà đối tượng thuộc về và lưu trữ tham chiếu đến đối tượng đó trong một biến.
+
+Ví dụ, nếu bạn muốn tạo một đối tượng "Rectangle" để biểu diễn một hình chữ nhật, bạn có thể sử dụng từ khoá "new" như sau:
+Rectangle rect = new Rectangle(10, 20);
+Trong đó, "Rectangle" là tên của lớp, "rect" là tên của biến chứa đối tượng mới được tạo, và "new Rectangle(10, 20)" là toán tử tạo đối tượng.
+Trong trường hợp này, đối tượng được tạo có chiều rộng là 10 và chiều cao là 20. Sau khi tạo đối tượng, bạn có thể sử dụng các phương thức và
+thuộc tính của lớp Rectangle để làm việc với đối tượng này.
+
+
++ thuộc tính, phương thức là gì
+Thuộc tính (hay còn gọi là biến thành viên) là các biến được khai báo trong một lớp. Chúng được sử dụng để lưu trữ dữ liệu cho đối tượng được tạo
+từ lớp đó. Mỗi đối tượng có các giá trị riêng cho các thuộc tính của nó.
+ public class Person {
+    String name;
+    int age;
+    String address;
+    String phoneNumber;
+ }
+
+Các phương thức (method) nó định nghĩa ứng xử của lớp. Một phương thức là một tập hợp các khối lệnh (code) để thi hành một chức năng nào đó.
+Ví dụ như System.out.println() đã biết, là một phương thức. Bạn có thể định nghĩa phương thức riêng của bạn, thi hành với một nhiệm vụ cụ thể nào đó.
+Phương thức được định nghĩa bên trong thân của lớp.
+
++ phương thức khởi tạo:
+Trong Java, một phương thức khởi tạo là một phương thức đặc biệt được sử dụng để khởi tạo đối tượng của một lớp. Phương thức khởi tạo có tên giống với
+tên của lớp và không có kiểu trả về được khai báo. Khi một đối tượng được tạo, phương thức khởi tạo sẽ được gọi để khởi tạo các giá trị cho các thuộc tính
+của đối tượng đó.
+Ví dụ về định nghĩa phương thức khởi tạo trong Java:
+public class MyClass {
+    private int x;
+    private String s;
+
+    // Phương thức khởi tạo mặc định
+    public MyClass() {
+        x = 0;
+        s = "";
+    }
+
+    // Phương thức khởi tạo có tham số
+    public MyClass(int x, String s) {
+        this.x = x;
+        this.s = s;
+    }
+}
+Trong ví dụ trên, lớp MyClass có hai phương thức khởi tạo: phương thức khởi tạo mặc định và phương thức khởi tạo có tham số. Phương thức khởi tạo mặc định
+sẽ khởi tạo x và s với giá trị mặc định của chúng, trong khi phương thức khởi tạo có tham số sẽ sử dụng các giá trị được chuyển vào để khởi tạo x và s.
+
