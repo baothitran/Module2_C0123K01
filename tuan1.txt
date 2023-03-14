@@ -153,3 +153,45 @@ public class MyClass {
 Trong ví dụ trên, lớp MyClass có hai phương thức khởi tạo: phương thức khởi tạo mặc định và phương thức khởi tạo có tham số. Phương thức khởi tạo mặc định
 sẽ khởi tạo x và s với giá trị mặc định của chúng, trong khi phương thức khởi tạo có tham số sẽ sử dụng các giá trị được chuyển vào để khởi tạo x và s.
 
+/---------------------------------------------------------
+15/03
+Đọc tìm hiểu và demo
++ access modifier trong Java
+- Default: chỉ có thể truy cập bên trong package.
+- Private: chỉ có thể được truy cập trong chính lớp được khai báo đó.
+- Public: có thể truy cập ở bất cứ đâu. Tuy nhiên, nếu lớp public chúng ta đang cố gắng truy cập là trong một package khác,
+  thì lớp public này vẫn cần được import trước khi truy cập.
+- Protected: có thể truy cập bên trong package và bên ngoài package nhưng chỉ thông qua tính kế thừa.
+
++ biến static trong java
+https://www.youtube.com/watch?v=YTYnNFCcDXA
+Khi bạn khai báo một biến là static, thì biến đó được gọi là biến tĩnh, hay biến static.
+Biến static có thể được sử dụng để tham chiếu thuộc tính chung của tất cả đối tượng (mà không là duy nhất cho mỗi đối tượng),
+ví dụ như tên công ty của nhân viên, tên trường học của các sinh viên, ...
+  Cú pháp: modifier static data_type variable_name;
+  Khai báo biến static:
+    class Application{
+    public static String language = "english"; }
+
+
++ Nested class là gì?
+Nested class(lớp lồng nhau) là một lớp được khai báo bên trong lớp khác.
+   Cú pháp:
+   class OuterClass {
+       ...
+       static class StaticNestedClass {
+       ...
+       }
+       class InnerClass {
+       ...
+       }
+   }
+
+
++ biến instance và biến local, biến static  trong java
+https://viettuts.vn/java/bien-trong-java
+- Biến local được khai báo trong các phương thức, hàm contructor hoặc trong các block. Không được sử dụng "access modifier" khi khai báo biến local.
+- Biến instance được khai báo trong một lớp(class), bên ngoài các phương thức, constructor và các block. Được phép sử dụng "access modifier" khi khai
+ báo biến instance, mặc định là "default".
+- Biến static được khai báo trong một class với từ khóa "static", phía bên ngoài các phương thức, constructor và block.
+
