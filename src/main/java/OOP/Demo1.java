@@ -2,6 +2,7 @@ package OOP;
 
 public class Demo1 {
     protected int sum(int a, int b) {
+
         return a + b;
     }
 

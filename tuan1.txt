@@ -190,6 +190,7 @@ Nested class(lớp lồng nhau) là một lớp được khai báo bên trong l�
 
 + biến instance và biến local, biến static  trong java
 https://viettuts.vn/java/bien-trong-java
+
 - Biến local được khai báo trong các phương thức, hàm contructor hoặc trong các block. Không được sử dụng "access modifier" khi khai báo biến local.
 - Biến instance được khai báo trong một lớp(class), bên ngoài các phương thức, constructor và các block. Được phép sử dụng "access modifier" khi khai
  báo biến instance, mặc định là "default".
