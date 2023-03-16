@@ -1,0 +1,109 @@
+16/3:
+
+1. Kế thừa là gì?
+- Kế thừa trong lập trình (Inheritance) có nghĩa là một lớp sẽ thừa hưởng lại những thuộc tính, phương thức từ lớp khác.
+ Việc sử dụng kế thừa nhằm tái sử dụng code đã viết trước đó, thuận tiện trong việc bảo trì và nâng cấp chương trình.
+  Cú pháp:
+  class <tên lớp con> extends <tên lớp cha> {
+ }
+- Lớp được kế thừa gọi là lớp cha (parent class) hoặc lớp cơ sở (base class) hoặc superclass
+- Lớp kế thừa gọi là lớp con (child class) hoặc lớp dẫn xuất (derived class) hoặc subclass
+- Một số dạng kế thừa
+• Single: Một lớp kế thừa từ chỉ một lớp cha
+• Multilevel: Một lớp kế thừa từ một lớp cha,lớp cha lại kế thừa từ lớp khác ở trên nó
+• Hierarchical: Một lớp cha có nhiều lớp con với nhiều level khác nhau
+• Multiple: Một lớp con kế thừa từ nhiều lớp cha (Java không cho phép đa kế thừa)
+
+2. override là gì?
+- Override là hiện tượng 1 phương thức thuộc lớp cha được định nghĩa lại ở lớp con.
+- @Override có thể đc sử dụng để đánh dấu phương thức ghi đè.
+- Các nguyên tắc ghi đè phương thức trong java
+  + Phương thức phải có tên giống với lớp cha.
+  + Phương thức phải có tham số giống với lớp cha.
+  + Lớp con và lớp cha có mối quan hệ kế thừa.
+
+3. overloading là gì?
+- Overloading là việc tạo ra nhiều phương thức trong một lớp có chung tên nhưng khác tham số truyền vào.
+Lý do: tăng tính sử dụng cho các phuương thức bên trong một lớp.
+- Các cách để nạp chồng phương thức trong Java:
+ + Bằng việc thay đổi số tham số
+     class Calculation{
+       void sum(int a,int b){System.out.println(a+b);}
+       void sum(int a,int b,int c){System.out.println(a+b+c);}
+
+       public static void main(String args[]){
+       Calculation obj=new Calculation();
+       obj.sum(10,10,10);
+       obj.sum(20,20);
+       }
+     }
+ + Bằng việc thay đổi kiểu dữ liệu
+     class Calculation2{
+       void sum(int a,int b){System.out.println(a+b);}
+       void sum(double a,double b){System.out.println(a+b);}
+
+       public static void main(String args[]){
+       Calculation2 obj=new Calculation2();
+       obj.sum(10.5,10.5);
+       obj.sum(20,20);
+       }
+     }
+
+
+4. Từ khóa final
+- Từ khoá final áp dụng cho lớp và phương thức để ngăn ngừa việc kế thừa và ghi đè phương thức.
+- Từ khóa final có thể được sử dụng trong nhiều ngữ cảnh:
+  + Biến final: bạn không thể thay đổi giá trị của biến final (nó sẽ là hằng số).
+  + Phương thức final: bạn không thể ghi đè phương thức final.
+  + Lớp final: bạn không thể kế thừa lớp final.
+  + Biến static final trống: Một biến final mà không được khởi tạo tại thời điểm khai báo được gọi là biến final trống.
+    Nó chỉ có thể được khởi tạo trong khối static.
+
+5. Đa hình trong kế thừa, cách sử dụng
+- Polymorphism (Đa hình) là cơ chế cho phép một biến thuộc kiểu dữ liệu cha có thể trỏ đến một đối tượng thuộc lớp con.
+- Khi khai báo một lớp,đồng nghĩa với tạo ra một kiểu dữ liệu mới
+- Trong Java, chúng ta có thể đạt được tính đa hình (polymorphism) với nạp chồng phương thức (method overloading), ghi đè phương thức (method overriding).
+- Ví dụ:
+        class Polygon {
+          //phương thức render của lớp Polygon
+          public void render() {
+            System.out.println("Rendering Polygon...");
+          }
+        }
+
+        class Square extends Polygon {
+          //ghi đè phương thức render
+          @Override
+          public void render() {
+            System.out.println("Rendering Square...");
+          }
+        }
+
+        class Circle extends Polygon {
+          //ghi đè phương thức render
+          @Override
+          public void render() {
+            System.out.println("Rendering Circle...");
+          }
+        }
+
+        class Main {
+          public static void main(String[] args) {
+            // create an object of Square
+            Square s1 = new Square();
+            s1.render();
+
+            // create an object of Circle
+            Circle c1 = new Circle();
+            c1.render();
+          }
+        }
+      Ở ví dụ trên, lớp Polygon có 2 lớp con là Square and Circle. Chúng đều có hàm render() nhưng hàm này thực thi khác nhau trong từng lớp.
+      Đó là biểu hiện của tính đa hình (polymorphism).
+
+6. toString() là gì
+- Đây là phương thức được sử dụng để chuyển đổi một object thành một string (chuỗi) rồi trả về nó.
+  Phương thức toString() thuộc class Object trong Java và có thể sử dụng nó mà không cần import thư viện nào cả.
+- Cú pháp:
+  object.toString()
+  Trong đó, object là tên đối tượng của class được trả về.
