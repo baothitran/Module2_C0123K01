@@ -116,8 +116,6 @@ Về soạn và demo theo video youtube
   Đa kế thừa sẽ dẫn đến “diamond problem”.
   Trong đa thừa kế chúng ta sẽ gặp tình huống, giữa các class được thừa kế có những thuộc tính và method cùng tên.
   Trong trường hợp trên, đối với những thuộc tính và method có cùng tên thì class con sẽ không biết sử dụng của class cha nào.
-  Được gọi là Diamond Problem.
-
 
 
 2. Lớp abstract là gì, phương thức abstract là gì. Khi nào sử dụng lớp abstract
