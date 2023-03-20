@@ -113,8 +113,12 @@ Về notes lại 2 bài : Cylinder và bài Point
 Về soạn và demo theo video youtube
 1. Vì sao trong Java không cho đa kế thừa
 - Đa kế thừa không được hỗ trợ trong Java để giảm sự phức tạp và đơn giản hoá ngôn ngữ.
-  Ví dụ trường hợp có ba class A, B, C. Class C kế thừa từ class A và B. Nếu class A và B có cùng phương thức và
-   gọi nó từ đối tượng của class con, sẽ không thể biết được đang gọi phương thức của class A hay B.
+  Đa kế thừa sẽ dẫn đến “diamond problem”.
+  Trong đa thừa kế chúng ta sẽ gặp tình huống, giữa các class được thừa kế có những thuộc tính và method cùng tên.
+  Trong trường hợp trên, đối với những thuộc tính và method có cùng tên thì class con sẽ không biết sử dụng của class cha nào.
+  Được gọi là Diamond Problem.
+
+
 
 2. Lớp abstract là gì, phương thức abstract là gì. Khi nào sử dụng lớp abstract
 - Một lớp được khai báo là abstract được gọi là một lớp trừu tượng. Nó có thể có các phương thức trừu tượng và không trừu tượng.
