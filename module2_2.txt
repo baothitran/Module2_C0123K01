@@ -107,3 +107,59 @@ Lý do: tăng tính sử dụng cho các phuương thức bên trong một lớp
 - Cú pháp:
   object.toString()
   Trong đó, object là tên đối tượng của class được trả về.
+************************************************************
+20/03:
+Về notes lại 2 bài : Cylinder và bài Point
+Về soạn và demo theo video youtube
+1. Vì sao trong Java không cho đa kế thừa
+- Đa kế thừa không được hỗ trợ trong Java để giảm sự phức tạp và đơn giản hoá ngôn ngữ.
+  Ví dụ trường hợp có ba class A, B, C. Class C kế thừa từ class A và B. Nếu class A và B có cùng phương thức và
+   gọi nó từ đối tượng của class con, sẽ không thể biết được đang gọi phương thức của class A hay B.
+
+2. Lớp abstract là gì, phương thức abstract là gì. Khi nào sử dụng lớp abstract
+- Một lớp được khai báo là abstract được gọi là một lớp trừu tượng. Nó có thể có các phương thức trừu tượng và không trừu tượng.
+  Nó cần được extend và khai triển phương thức của nó. Lớp trừu tượng thì không thể được khởi tạo.
+
+- Một phương thức được khai báo là abstract và không có triển khai được gọi là một phương thức trừu tượng.
+
+  abstract class Language {     // lớp abstract
+  int bienA;
+    // phương thức abstract
+    abstract void method1();
+
+    // phương thức thường
+    void method2() {
+      System.out.println("This is regular method");
+    }
+  }
+
+- Khi một nhóm đối tượng có cùng bản chất kế thừa từ một class thì sử dụng abstract class.
+
+3. Các tính chất của lớp abstract
+• Không thể tạo đối tượng của lớp abstract
+• Lớp abstract có thể có các thuộc tính và phương thức bình thường
+• Một lớp chứa phương thức abstract thì lớp đó phải là abstract
+• Một lớp không phải là abstract kế thừa từ một lớp cha abstract thì phải implement tất cả các phương thức abstract của lớp cha
+• Một lớp abstract kế thừa từ một lớp cha abstract thì có thể không implement các phương thức abstract củal ớp cha
+• Lớp abstract thì không thể là final
+• Phương thức abstract thì không thể là final
+
+4. Interface là gì
+- Interface là một kiểu dữ liệu tham chiếu trong Java. Nó là tập hợp các phương thức abstract (trừu tượng).
+  Khi một lớp kế thừa interface, thì nó sẽ kế thừa những phương thức abstract của interface đó.
+
+5. Các tính chất của interface
+• Định nghĩa một interface tạo ra một kiểu dữ liệu mới
+• Không thể tạo đối tượng của interface
+• Interface không thể chứa các phương thức không abstract
+• Khi một lớp triển khai interface thì cần triển khai tất cả các phương thức được khai báo trong interface đó
+• Interface có thể được thiết kế để khai báo các phương thức chung cho các lớp không liên quan với nhau ( khác với abstract class,được
+  kế thừa bởi các lớp có liên quan với nhau)
+• Interface bổ sung cho việc Java không hỗ trợ ”đa kế thừa”
+
+6. Khi nào dùng abstract khi nào dùng interface
+• Trong nhiều trường hợp, có thể chuyển đổi giữa việc sử dụng Interface và Abstract class
+• Nếu có sự gần gũi, rõ ràng giữa các lớp về mối quan hệ cha - con thì nên sử dụng lớp ( mối quan hệ is - a)
+  Ví dụ: Apple is a Fruit ( Táo là một Quả)
+• Nếu không có mối quan hệ gần gũi thì nên chọn interface ( mối quan hệ can - do)
+  Ví dụ: Bird can fly ( Chim có thể bay)
