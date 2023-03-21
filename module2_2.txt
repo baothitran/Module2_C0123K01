@@ -165,3 +165,51 @@ Về soạn và demo theo video youtube
   Ví dụ: Apple is a Fruit ( Táo là một Quả)
 • Nếu không có mối quan hệ gần gũi thì nên chọn interface ( mối quan hệ can - do)
   Ví dụ: Bird can fly ( Chim có thể bay)
+
+************************************************************
+21/03
+
+- Giao diện Comparable trong java được sử dụng để sắp xếp các đối tượng của lớp do người dùng định nghĩa (user-defined).
+Giao diện này thuộc về gói java.lang và chỉ chứa một phương thức có tên compareTo(Object).
+- Giao diện Comparator trong java được sử dụng để sắp xếp các đối tượng của lớp do người dùng định nghĩa (user-defined).
+Giao diện này thuộc về gói java.util và chứa hai phương thức có tên compare(Object obj1,Object obj2) và equals(Object element).
+- Comparable:
+  + Bạn phải implements giao tiếp Comparable cho lớp đối tượng cần được so sánh.
+  + Comparable cung cấp phương thức compareTo() để sắp xếp các phần tử.
+  + Comparable thuộc về java.lang package.
+  + Chúng ta có thể sắp xếp các phần tử của kiểu Comparable bởi phương thức Collections.sort(List) .
+- Comparator:
+  + Bạn không phải implements giao tiếp Comparator cho lớp đối tượng cần được so sánh.
+  + Comparator cung cấp phương thức compare() để sắp xếp các phần tử.
+  + Comparator thuộc về java.util package.
+  + Chúng ta có thể sắp xếp các phần tử của kiểu Comparator bởi phương thức Collections.sort(List,Comparator).
+- Lớp Collections là một thành phần trong Java Collection Framework, nó cung cấp phương thức sort() để sắp xếp các phần tử của collection.
+
+
+- Generics trong Java
+Java Generics cho phép chúng ta viết một phương thức duy nhất có thể thực hiện các hoạt động trong nhiều loại đối tượng hỗ trợ phương thức đó.
+Sử dụng các lớp và phương thức Java Generic, lập trình viên có thể chỉ định một tập hợp các phương thức có liên quan với một khai báo phương
+thức chung hoặc với một khai báo một lớp.
+  class MyGenClass<T> {
+         T obj;
+         void add(T obj) {
+           this.obj=obj;
+         }
+         T getObj() {
+           return obj;
+         }
+  }
+
+- Phương thức equals và hashcode trong java
+  Equals() : dùng để xác minh sự bằng nhau của hai đối tượng, hai đối tượng bằng nhau khi và chỉ khi nó cùng tham chiếu
+  đến một vị trí ô nhớ. Hầu hết các lớp trong java ghi đè lại phương thức này để tạo ra logic so sánh của riêng nó.
+
+  Hashcode() : hashCode() trả về một số nguyên đại diện cho 1 instance của class. Khi 2 object là bằng nhau thì hashCode() method
+  của chúng cũng phải trả về giá trị bằng nhau. Đó là lý do nếu đã override equals() method thì cũng phải override hashCode() method.
+
+  Các quy tắc cho phương thức equals() và hashCode() trong Java:
+  + Khi phương thức equals() được ghi đè, phương thức hashCode() cũng phải được ghi đè.
+  + Nếu hai đối tượng bằng nhau, mã băm của chúng phải bằng nhau.
+  + Nếu hai đối tượng không bằng nhau, không có ràng buộc về mã băm của chúng (mã băm của chúng có thể bằng nhau hay không).
+  + Nếu hai đối tượng có mã băm giống nhau, thì không có ràng buộc nào về sự bình nhau của chúng (chúng có thể bằng nhau hay không).
+  + Nếu hai đối tượng có mã băm khác nhau, chúng không được bằng nhau.

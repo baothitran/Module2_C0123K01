@@ -1,0 +1,67 @@
+Định nghĩa 1 đối tượng trung gian để so sánh 2 thằng hinh học
+
+public class ComparatorGeometricByArea implements Comparator<Geometric> {
+    @Override
+    public int compare(Geometric o1, Geometric o2) {
+        if (o1.getArea() > o2.getArea()) {
+            return 1;           // trả về 1 số lớn hơn 0 (=1) thì o1>o2
+        } else if (o1.getArea() == o2.getArea()) {
+            return 0;           // trả về 0 thì o1=o2
+        }else
+            return -1;          // o1 < o2
+    }
+}
+
+public class GeometricMain {
+    public static void main(String[] args) {
+
+        Geometric[] geometrics = new Geometric[5];
+        geometrics[0] = new Circle(6);
+        geometrics[1] = new Rectangle(6, 4);
+        geometrics[2] = new Rectangle(5, 5);
+        geometrics[3] = new Circle(6.5f);
+        geometrics[4] = new Rectangle(5, 6);
+
+        Comparator comparator = new ComparatorGeometricByArea();
+        // Sắp xếp lại mảng geometric dùng comparator
+        Arrays.sort(geometrics, comparator);
+        printArray(geometrics);
+    }
+
+@Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+
+    // instanceof để kiểm tra xem đối tượng được truyền vào có phải là đối tượng của lớp Employee hay không
+        if (obj instanceof Employee) {
+            Employee o1 = (Employee) obj;
+            if (this.getName().equals(o1.getName()) && this.getAge() == ((Employee) obj).getAge()
+            && this.getSalary() == ((Employee) obj).getSalary()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+/// Sử dụng phương thức Objects.hash để tính toán hashCode cho các thuộc tính age, name và salary
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.age, this.name, this.salary);
+    }
+
+
+Employee e1 = new Employee("Quang Dang", 10, 1000.0f);  // 0x32cd
+        Employee e2 = new Employee("Quang Dang", 10, 1000.0f);  // 0x32ee
+        System.out.println(e1.hashCode());          //1252169911
+        System.out.println(e2.hashCode());          // 2101973421
+        // == để so sánh hai đối tượng e1 và e2 có cùng trỏ vào 1 ô nhớ hay không
+        if (e1 == e2) {
+            System.out.printf("%s == %s \n", "e1", "e2");
+        }
+        // equals() so sánh hai đối tượng e1 và e2 theo nội dung của chúng, tức là các thuộc tính age, name, salary
+        if (e1.equals(e2)) {
+            System.out.printf("%s equals %s \n", "e1", "e2");
+        }
+
