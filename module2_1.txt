@@ -25,8 +25,11 @@ Bài tập vòng lặp ai chưa làm thì làm bù
 
 Đọc bài trước, note lại và demo:
 - Lớp Wrapper trong java
-  Wrapper class trong Java là các lớp được sử dụng để bao bọc (wrap) các kiểu dữ liệu nguyên thủy (primitive data types) như int, float, double, boolean, v.v. để chúng có thể được sử dụng như các đối tượng (object) trong Java.
-  Các wrapper class này cung cấp các phương thức để chuyển đổi giá trị của các kiểu dữ liệu nguyên thủy thành đối tượng và ngược lại. Chúng cũng cung cấp các phương thức để thực hiện các phép tính toán và so sánh giữa các đối tượng của chúng. Ví dụ sử dụng wrapper class Integer để chuyển đổi một chuỗi sang số nguyên:
+  Wrapper class trong Java là các lớp được sử dụng để bao bọc (wrap) các kiểu dữ liệu nguyên thủy (primitive data types)
+  như int, float, double, boolean, v.v. để chúng có thể được sử dụng như các đối tượng (object) trong Java.
+  Các wrapper class này cung cấp các phương thức để chuyển đổi giá trị của các kiểu dữ liệu nguyên thủy thành đối tượng và
+  ngược lại. Chúng cũng cung cấp các phương thức để thực hiện các phép tính toán và so sánh giữa các đối tượng của chúng.
+  Ví dụ sử dụng wrapper class Integer để chuyển đổi một chuỗi sang số nguyên:
   
   String str = "123";
   Integer num = Integer.parseInt(str);
@@ -36,10 +39,12 @@ Bài tập vòng lặp ai chưa làm thì làm bù
 - Kiểu tham chiếu và tham trị trong Java
 
 Truyền tham trị (Pass by Value):
-Khi truyền tham trị vào phương thức, giá trị của biến được sao chép vào một tham số khác trong phương thức. Do đó, thay đổi giá trị của tham số trong phương thức sẽ không ảnh hưởng đến giá trị của biến ban đầu ở bên ngoài phương thức.
+Khi truyền tham trị vào phương thức, giá trị của biến được sao chép vào một tham số khác trong phương thức. Do đó, thay đổi giá trị
+của tham số trong phương thức sẽ không ảnh hưởng đến giá trị của biến ban đầu ở bên ngoài phương thức.
 
 Truyền tham chiếu (Pass by Reference):
-Khi truyền tham chiếu vào phương thức, địa chỉ của biến được sao chép vào tham số trong phương thức. Do đó, thay đổi giá trị của tham số trong phương thức sẽ ảnh hưởng đến giá trị của biến ban đầu ở bên ngoài phương thức.
+Khi truyền tham chiếu vào phương thức, địa chỉ của biến được sao chép vào tham số trong phương thức. Do đó, thay đổi giá trị
+của tham số trong phương thức sẽ ảnh hưởng đến giá trị của biến ban đầu ở bên ngoài phương thức.
 Ví dụ:
 
 13/03/23:
@@ -110,14 +115,15 @@ bạn cần chỉ định lớp mà đối tượng thuộc về và lưu trữ 
 
 Ví dụ, nếu bạn muốn tạo một đối tượng "Rectangle" để biểu diễn một hình chữ nhật, bạn có thể sử dụng từ khoá "new" như sau:
 Rectangle rect = new Rectangle(10, 20);
-Trong đó, "Rectangle" là tên của lớp, "rect" là tên của biến chứa đối tượng mới được tạo, và "new Rectangle(10, 20)" là toán tử tạo đối tượng.
-Trong trường hợp này, đối tượng được tạo có chiều rộng là 10 và chiều cao là 20. Sau khi tạo đối tượng, bạn có thể sử dụng các phương thức và
-thuộc tính của lớp Rectangle để làm việc với đối tượng này.
+Trong đó, "Rectangle" là tên của lớp, "rect" là tên của biến chứa đối tượng mới được tạo, và "new Rectangle(10, 20)" là toán tử
+tạo đối tượng.
+Trong trường hợp này, đối tượng được tạo có chiều rộng là 10 và chiều cao là 20. Sau khi tạo đối tượng, bạn có thể sử dụng các
+phương thức và thuộc tính của lớp Rectangle để làm việc với đối tượng này.
 
 
 + thuộc tính, phương thức là gì
-Thuộc tính (hay còn gọi là biến thành viên) là các biến được khai báo trong một lớp. Chúng được sử dụng để lưu trữ dữ liệu cho đối tượng được tạo
-từ lớp đó. Mỗi đối tượng có các giá trị riêng cho các thuộc tính của nó.
+Thuộc tính (hay còn gọi là biến thành viên) là các biến được khai báo trong một lớp. Chúng được sử dụng để lưu trữ dữ liệu
+cho đối tượng được tạo từ lớp đó. Mỗi đối tượng có các giá trị riêng cho các thuộc tính của nó.
  public class Person {
     String name;
     int age;
@@ -125,14 +131,16 @@ từ lớp đó. Mỗi đối tượng có các giá trị riêng cho các thu�
     String phoneNumber;
  }
 
-Các phương thức (method) nó định nghĩa ứng xử của lớp. Một phương thức là một tập hợp các khối lệnh (code) để thi hành một chức năng nào đó.
-Ví dụ như System.out.println() đã biết, là một phương thức. Bạn có thể định nghĩa phương thức riêng của bạn, thi hành với một nhiệm vụ cụ thể nào đó.
+Các phương thức (method) nó định nghĩa ứng xử của lớp. Một phương thức là một tập hợp các khối lệnh (code) để thi hành một c
+hức năng nào đó.
+Ví dụ như System.out.println() đã biết, là một phương thức. Bạn có thể định nghĩa phương thức riêng của bạn, thi hành với
+một nhiệm vụ cụ thể nào đó.
 Phương thức được định nghĩa bên trong thân của lớp.
 
 + phương thức khởi tạo:
-Trong Java, một phương thức khởi tạo là một phương thức đặc biệt được sử dụng để khởi tạo đối tượng của một lớp. Phương thức khởi tạo có tên giống với
-tên của lớp và không có kiểu trả về được khai báo. Khi một đối tượng được tạo, phương thức khởi tạo sẽ được gọi để khởi tạo các giá trị cho các thuộc tính
-của đối tượng đó.
+Trong Java, một phương thức khởi tạo là một phương thức đặc biệt được sử dụng để khởi tạo đối tượng của một lớp. Phương thức khởi tạo
+có tên giống với tên của lớp và không có kiểu trả về được khai báo. Khi một đối tượng được tạo, phương thức khởi tạo sẽ được gọi để
+khởi tạo các giá trị cho các thuộc tính của đối tượng đó.
 Ví dụ về định nghĩa phương thức khởi tạo trong Java:
 public class MyClass {
     private int x;
@@ -150,8 +158,9 @@ public class MyClass {
         this.s = s;
     }
 }
-Trong ví dụ trên, lớp MyClass có hai phương thức khởi tạo: phương thức khởi tạo mặc định và phương thức khởi tạo có tham số. Phương thức khởi tạo mặc định
-sẽ khởi tạo x và s với giá trị mặc định của chúng, trong khi phương thức khởi tạo có tham số sẽ sử dụng các giá trị được chuyển vào để khởi tạo x và s.
+Trong ví dụ trên, lớp MyClass có hai phương thức khởi tạo: phương thức khởi tạo mặc định và phương thức khởi tạo có tham số.
+Phương thức khởi tạo mặc định sẽ khởi tạo x và s với giá trị mặc định của chúng, trong khi phương thức khởi tạo có tham số sẽ
+sử dụng các giá trị được chuyển vào để khởi tạo x và s.
 
 /---------------------------------------------------------
 15/03

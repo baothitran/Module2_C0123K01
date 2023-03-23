@@ -3,14 +3,13 @@ package ComparableComparator.ComparableCircle;
 public class Circle {
     private double radius = 2;
     private String color = "blue";
-    private boolean filled;
+
     public Circle () {
 
     };
     public Circle(double radius, String color, boolean filled) {
         this.radius = radius;
         this.color = color;
-        this.filled = filled;
     }
 
     public Circle(double radius) {

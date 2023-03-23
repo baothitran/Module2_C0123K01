@@ -1,5 +1,4 @@
 package ComparableComparator.ComparableCircle;
-
 import java.util.Arrays;
 
 public class ComparableCircleTest {
