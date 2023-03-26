@@ -2,8 +2,6 @@ package StackQueue;
 
 import java.util.Stack;
 
-import java.util.Stack;
-
 public class StackExample {
     public static void main(String[] args) {
         // Tạo một đối tượng Stack
