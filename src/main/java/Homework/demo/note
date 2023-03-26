@@ -1,0 +1,49 @@
+package Homework.demo;
+
+import java.util.ArrayList;
+public class Main {
+    public static void main(String[] args) {
+        ArrayList userList = new ArrayList<>();
+        userList.add("Kieu Anh");
+        userList.add(1);
+        userList.add(new User());
+        userList.add(new Employee());
+        for (int i=0; i< userList.size();i++){
+            if (userList.get(i) instanceof User) {
+                User user = (User) userList.get(i);
+                (((User) userList.get(i)).tinhTien());
+            }
+        }
+        //quy định danh sách chỉ thuộc 1 loại kiểu dữ liệu thôi
+        ArrayList<User> userArrayList = new ArrayList<>();
+        //khi compile đã được xác định kiểu dữ liệu
+        //quy định kiểu dữ liệu như 1 tham số
+        userArrayList.add(new User());
+        //không cần ép kiểu
+        userArrayList.get(1).tinhTien();
+    }
+}
+
+public class ManagerGeneric<N> {
+    public void aVoid(N o){
+
+    }
+    public N remove(int id) {
+        return null;
+    }
+
+    public static void main(String[] args) {
+        ManagerGeneric<User> ka = new ManagerGeneric<>();
+        ka.aVoid(new User());
+        User u = ka.remove(2);
+        Employee u1 = ka.remove(2);
+
+        ManagerGeneric<Employee> quan = new ManagerGeneric<>();
+        quan.aVoid(new Employee());
+        Employee e1 = quan.remove(2);
+
+//        quan.aVoid(new User());
+        ManagerGeneric a = new ManagerGeneric();
+        a.aVoid("aa");
+    }
+}

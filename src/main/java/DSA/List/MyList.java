@@ -25,4 +25,13 @@ public class MyList <E> {
         }
         return (E) elements[i];
     }
+    public void remove(int index, int number) {
+        for(int i = index; i < size - number; i++) {
+            elements[i] = elements[i + number];
+        }
+        for(int j = 1; j <= number; j++) {
+            elements[size-j] = null;
+        }
+        size -= number;
+    }
 }
