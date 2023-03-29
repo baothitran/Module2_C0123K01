@@ -180,7 +180,7 @@ public class ManagerCustomer {
     }
 
     public void searchByNameOrEmail() {
-        System.out.println("Nhập tên hặc email bạn muốn tìm kiếm: ");
+        System.out.println("Nhập tên hoặc email bạn muốn tìm kiếm: ");
         String kw = scanner.nextLine();
         List<Customer> results = new ArrayList<>();
         for (int i = 0; i < customers.size(); i++) {
