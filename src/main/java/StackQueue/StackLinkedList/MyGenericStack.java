@@ -1,4 +1,4 @@
-package StackQueue.LinkedList;
+package StackQueue.StackLinkedList;
 import java.util.EmptyStackException;
 import java.util.LinkedList;
 public class MyGenericStack<T> {
