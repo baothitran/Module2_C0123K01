@@ -23,6 +23,10 @@ public class Fresher extends Employee {
         this.education = education;
     }
 
+    public Fresher(long id, String fullName, Date date, String phone, String email, EmployeeType fresher) {
+        super(id, fullName, date, phone, email, fresher);
+    }
+
     public Date getGraduationDate() {
         return graduationDate;
     }

@@ -20,6 +20,10 @@ public class Experience extends Employee{
         ProSkill = proSkill;
     }
 
+    public Experience(long id, String fullName, Date date, String phone, String email, EmployeeType experience) {
+        super(id, fullName, date, phone, email, experience);
+    }
+
     public int getExpInYear() {
         return ExpInYear;
     }

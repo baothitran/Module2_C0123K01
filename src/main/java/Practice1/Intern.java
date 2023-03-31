@@ -25,6 +25,10 @@ public class Intern extends Employee{
         this.universityName = universityName;
     }
 
+    public Intern(long id, String fullName, Date date, String phone, String email, EmployeeType intern) {
+        super(id, fullName, date, phone, email, intern);
+    }
+
     public String getMajors() {
         return majors;
     }

@@ -8,6 +8,7 @@ public enum EmployeeType {
     }
 
     public int getId() {
+
         return id;
     }
 
@@ -21,4 +22,5 @@ public enum EmployeeType {
             System.out.println(e + " - " + e.getId());
         }
     }
+
 }
