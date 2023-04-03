@@ -28,8 +28,22 @@ public class MyQueue {
     public void enqueue(int item){
         if (isQueueFull()) {
             System.out.println("Overflow! Unable to add element: " + item);
-    }
+        }
 
+    }
+    public void dequeue() {
+        if (isQueueEmpty()) {
+            System.out.println("Underflow! Unable to remove element from Queue");
+        } else {
+            head++;
+            if (head == capacity - 1) {
+                System.out.println("Pop operation done! removed: " + queueArr[head - 1]);
+                head = 0;
+            } else {
+                System.out.println("Pop operation done! removed: " + queueArr[head - 1]);
+            }
+            currentSize--;
+        }
     }
 
 
