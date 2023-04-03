@@ -25,6 +25,12 @@ public class MyQueue {
         }
         return status;
     }
+    public void enqueue(int item){
+        if (isQueueFull()) {
+            System.out.println("Overflow! Unable to add element: " + item);
+    }
+
+    }
 
 
 }

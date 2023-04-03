@@ -1,0 +1,27 @@
+31/3:
+- Làm thế nào để Set/HashSet đảm bảo các phần tử không trùng lặp
+  Như chúng ta đã biết rằng mỗi key trong HashMap là duy nhất, vận dụng tính chất này mỗi phần tử trong HashSet sẽ là một key
+  trong HashMap với một value là một hằng số PRESENT.
+  // Dummy value to associate with an Object in the backing Map
+  private static final Object PRESENT = new Object();
+  public boolean add(E e) {
+          return map.put(e, PRESENT)==null;
+  }
+  Từ đoạn code trên có thể thấy rằng bên trong HashSet#add() sử dụng HashMap#put() method với key là phần tử được thêm vào HashSet
+  và value là một hằng số PRESENT.
+  HashMap#put method trả về phần value khi của key khi nó đã tồn tại trước đó hoặc trả về null khi chưa tồn tại. Vì vậy nếu HashMap.put()
+  trả về null nghĩa là thêm phần tử thành công.
+
+- Phương thức equals và hashcode trong java:
+  Equals() : dùng để xác minh sự bằng nhau của hai đối tượng, hai đối tượng bằng nhau khi và chỉ khi nó cùng tham chiếu
+  đến một vị trí ô nhớ. Hầu hết các lớp trong java ghi đè lại phương thức này để tạo ra logic so sánh của riêng nó.
+
+  Hashcode() : hashCode() trả về một số nguyên đại diện cho 1 instance của class. Khi 2 object là bằng nhau thì hashCode() method
+  của chúng cũng phải trả về giá trị bằng nhau. Đó là lý do nếu đã override equals() method thì cũng phải override hashCode() method.
+
+  Các quy tắc cho phương thức equals() và hashCode() trong Java:
+  + Khi phương thức equals() được ghi đè, phương thức hashCode() cũng phải được ghi đè.
+  + Nếu hai đối tượng bằng nhau, mã băm của chúng phải bằng nhau.
+  + Nếu hai đối tượng không bằng nhau, không có ràng buộc về mã băm của chúng (mã băm của chúng có thể bằng nhau hay không).
+  + Nếu hai đối tượng có mã băm giống nhau, thì không có ràng buộc nào về sự bằng nhau của chúng (chúng có thể bằng nhau hay không).
+  + Nếu hai đối tượng có mã băm khác nhau, chúng không được bằng nhau.
