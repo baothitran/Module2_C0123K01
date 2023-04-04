@@ -1,4 +1,4 @@
-package MapTree.TreeNode;
+package MapTree.SearchTree;
 
 public abstract class AbstractTree<E> implements Tree<E> {
     @Override

@@ -1,0 +1,59 @@
+-------31/3:
+- Làm thế nào để Set/HashSet đảm bảo các phần tử không trùng lặp
+  Như chúng ta đã biết rằng mỗi key trong HashMap là duy nhất, vận dụng tính chất này mỗi phần tử trong HashSet sẽ là một key
+  trong HashMap với một value là một hằng số PRESENT.
+  // Dummy value to associate with an Object in the backing Map
+  private static final Object PRESENT = new Object();
+  public boolean add(E e) {
+          return map.put(e, PRESENT)==null;
+  }
+  Từ đoạn code trên có thể thấy rằng bên trong HashSet#add() sử dụng HashMap#put() method với key là phần tử được thêm vào HashSet
+  và value là một hằng số PRESENT.
+  HashMap#put method trả về phần value khi của key khi nó đã tồn tại trước đó hoặc trả về null khi chưa tồn tại. Vì vậy nếu HashMap.put()
+  trả về null nghĩa là thêm phần tử thành công.
+
+- Phương thức equals và hashcode trong java:
+  Equals() : dùng để xác minh sự bằng nhau của hai đối tượng, hai đối tượng bằng nhau khi và chỉ khi nó cùng tham chiếu
+  đến một vị trí ô nhớ. Hầu hết các lớp trong java ghi đè lại phương thức này để tạo ra logic so sánh của riêng nó.
+
+  Hashcode() : hashCode() trả về một số nguyên đại diện cho 1 instance của class. Khi 2 object là bằng nhau thì hashCode() method
+  của chúng cũng phải trả về giá trị bằng nhau. Đó là lý do nếu đã override equals() method thì cũng phải override hashCode() method.
+
+  Các quy tắc cho phương thức equals() và hashCode() trong Java:
+  + Khi phương thức equals() được ghi đè, phương thức hashCode() cũng phải được ghi đè.
+  + Nếu hai đối tượng bằng nhau, mã băm của chúng phải bằng nhau.
+  + Nếu hai đối tượng không bằng nhau, không có ràng buộc về mã băm của chúng (mã băm của chúng có thể bằng nhau hay không).
+  + Nếu hai đối tượng có mã băm giống nhau, thì không có ràng buộc nào về sự bằng nhau của chúng (chúng có thể bằng nhau hay không).
+  + Nếu hai đối tượng có mã băm khác nhau, chúng không được bằng nhau.
+
+-------4/4:
++ kĩ thuật đổi tên biến, đổi tên phương thức
+  • Thay đổi tên biến hoặc phương thức để trở nên tốt hơn: dễ đọc,có ý nghĩa, thể hiện được ý nghĩa, tuân thủ coding convention
+  • Khi đổi tên biến hoặc phương thức cần lưu ý:
+    • Đổi tên tại vị trí khai báo
+    • Đổi tên tại tất cả các vị trí có sử dụng biến hoặc phương thức
+  • Nên sử dụng tính năng của IDE để đổi tên biến hoặc phương thức
+  • Phím tắt đổi tên của IntelliJ IDEA là: Shift + F6
+
++ Tên các biến, các hàm, các lớp, các package phải tuân thủ theo Coding Convention, tên phải ngắn gọn, có nghĩa, không đặt các tên chung chung,
+khó hiểu.
+  Một số quy tắc đặt tên:
+  • Tên biến, lớp:  Nên đặt tên là các danh từ, cụm danh từ hay tính từ.
+  • Tên hàm: Nên bắt đầu bằng động từ.
+  • Tên biến và hàm nên theo quy tắc camel Case: Ký tự đầu tiên viết thường, các ký tự đầu tiên của từ sau viết hoa.
+  • Tên lớp nên theo quy tắc Pascal Case: Viết hoa hết các ký tự đầu tiên của chữ đó.
+
++ kĩ thuật tách biến
+  • Trong nhiều trường hợp, các biểu thức phức tạp sẽ gây khó hiểu
+  • Tách biến (Variable Extraction) là kỹ thuật giúp đơn giản hoá các biểu thức và giúp dễ hiểu hơn
+  • Nhấn tổ hợp phím Ctrl + Alt + V (Windows) hoặc Cmd + Alt + V (Mac) hoặc chọn Extract Variable từ menu Refactor để tách biến
+
++ kĩ thuật tách hằng
+  • Trong nhiều trường hợp, các giá trị “thần kỳ”(magic value) sẽ gây khó khăn cho việc đọc hiểu mã nguồn
+  • Tách hằng giúp mang lại ý nghĩa cho các giá trị “thần kỳ” và mã nguồn dễ hiểu hơn
+  • Nhấn tổ hợp phím Ctrl + Alt + C (Windows) hoặc Cmd + Alt + C (Mac) hoặc chọn Extract Constant từ menu Refactor để tách hằng
+
++ kĩ thuật tách phương thức
+  • Trong nhiều trường hợp,một phương thức quá dài, quá phức tạp hoặc xử lý quá nhiều tác vụ sẽ dẫn đến khó hiểu,khó kiểm soát
+  • Tách phương thức giúp cho các phương thức dễ đọc hiểu hơn, dễ kiểm soát hơn
+  • Nhấn tổ hợp phím Ctrl + Alt + M (Windows) hoặc Cmd + Alt + M (Mac) hoặc chọn Extract Method từ menu Refactor để tách phương thức

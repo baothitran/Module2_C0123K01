@@ -1,7 +1,4 @@
-package MapTree.TreeNode;
-
-import MapTree.TreeNode.AbstractTree;
-import MapTree.TreeNode.TreeNode;
+package MapTree.SearchTree;
 
 public class BST<E extends Comparable<E>> extends AbstractTree<E> {
     protected TreeNode<E> root;

@@ -1,4 +1,4 @@
-package MapTree.TreeNode;
+package MapTree.SearchTree;
 
 public class TestBST {
     public static void main(String[] args) {

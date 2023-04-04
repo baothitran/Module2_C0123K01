@@ -1,4 +1,4 @@
-package MapTree.TreeNode;
+package MapTree.SearchTree;
 
 public interface Tree<E>{
     public boolean insert(E e);
