@@ -2,6 +2,9 @@ package Practice1;
 
 import java.util.Date;
 
+
+// tính đóng gói: public, private
+// tính kế thừa: Experience kế thừa Employee
 public class Experience extends Employee{
     private int ExpInYear;
     private String ProSkill;

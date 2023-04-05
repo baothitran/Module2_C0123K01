@@ -2,6 +2,8 @@ package Practice1;
 
 import java.util.Date;
 
+//tính đóng gói: public, private
+// tính kế thừa: Intern kế thừa Employee
 public class Intern extends Employee{
     private String majors;
     private int semester;

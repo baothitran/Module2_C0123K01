@@ -2,6 +2,8 @@ package Practice1;
 
 import java.util.Date;
 
+// tính đóng gói: public, private
+// tính kế thừa: Experience kế thừa Employee
 public class Fresher extends Employee {
     private Date graduationDate;
 

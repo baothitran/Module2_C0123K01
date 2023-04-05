@@ -1,5 +1,7 @@
 package Practice1;
 
+
+// tính đóng gói: public, private
 public enum EmployeeType {
     Experience(0), Fresher(1), Intern(2);
     private int id;

@@ -2,6 +2,8 @@ package Practice1;
 import java.util.Date;
 import java.util.List;
 
+
+// tính đóng gói: public, private
 public class Employee {
     private long id;
     private String fullName;

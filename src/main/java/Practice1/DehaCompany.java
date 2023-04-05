@@ -5,30 +5,16 @@ import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
+
+//public, private: tính đóng gói
 public class DehaCompany {
     private Scanner scanner = new Scanner(System.in);
     List<Employee> employees;
 
     public DehaCompany() {
         employees = new ArrayList<>();
-        //long id, String fullName, Date birthDay, String phone, String email,
-        // EmployeeType employeeType, int expInYear, String proSkill
-//        Employee ep1 = new Experience(1L, "Quang Dang", new Date(1992, 7, 18), "033399457133",
-//                "quang.dang@codegym.vn", EmployeeType.Experience, 5, "Chem gio");
-//        // String majors, int semester, String universityName)
-//        Employee ep2 = new Intern("Chem gio", 4, "Duy Tan");
-//        ep2.setFullName("Quoc Phap");
-//        ep2.setEmail("phapsukumathon@gmail.com");
-//        ep2.setBirthDay(new Date(2000, 2, 2));
-//
-//        employees.add(ep1);
-//        employees.add(ep2);
-//        //Date graduationDate, String graduationRank, String education
-//        Employee ep3 = new Fresher(new Date(2017, 7, 30), "Gioi", "Kinh te");
-//        ep3.setFullName("Han Hoan");
-//        ep3.setEmail("han.hoan@gmail.com");
-//        ep3.setPhone("0357791212");
-//        employees.add(ep3);
+
+        //Tính đa hình
         Employee ep1 = new Experience(1, "Quang Dang", new Date(1992, 7, 18),
                 "0613343612","quang.dang@gmail.com",EmployeeType.Experience,5,"Photoshop");
 
