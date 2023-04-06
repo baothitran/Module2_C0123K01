@@ -27,3 +27,70 @@
     2. Interface (abstraction) không nên phụ thuộc vào chi tiết, mà ngược lại.
     ( Các class giao tiếp với nhau thông qua interface, không phải thông qua implementation.)
 - Xem lại bài CustomerManager xem áp dụng 4 tính chất ở đâu, dòng nào?
+
+
+--------6/4:
+- Ngoai lệ là gì
+ • Một ngoại lệ (Exception) trong Java là một vấn đề phát sinh trong quá trình thực thi chương trình. Khi xảy ra ngoại lệ,
+ luồng xử lý (flow) bị gián đoạn, chương trình/ứng dụng dừng bất thường. Nó là một đối tượng được ném ra tại Runtime.
+ • Ngoại lệ trong Java có thể xảy ra vì nhiều lý do khác nhau:
+  + Nhập dữ liệu không hợp lệ.
+  + Không tìm thấy file cần mở.
+  + Kết nối mạng bị ngắt trong quá trình thực hiện giao tác.
+  + JVM hết bộ nhớ.
+  + Truy cập vượt ngoài chỉ số của mảng, v…v…
+ • Dựa vào tính chất các vấn đề, người ta chia ngoại lệ thành ba loại:
+  + Ngoại lệ được kiểm tra (Checked Exceptions).
+  + Ngoại lệ không được kiểm tra (Unchecked Exceptions).
+  + Lỗi (Error).
+
+
+- Xử lý ngoại lệ
+  Java cung cấp 5 từ khóa sử dụng để xử lý ngoại lệ đó là:
+  + try:	Sử dụng để chứa đoạn lệnh có thể gây ra ngoại lệ, nó phải được theo sau bởi khối catch hoặc finally
+  + catch:	Sử dụng để xử lý ngoại lệ, các khối code để xử lý ngoại lệ sẽ được đặt trong đây
+  + finally:	Sử dụng để thực thi đoạn mã cần thiết của chương trình. Khối này sẽ luôn được thực thi
+  + throw:	  Sử dụng để ném ra ngoại lệ
+  + throws:	Sử dụng để khai báo ngoại lệ
+
+- Xử lý ngoại lệ với try/catch:
+   Khối try-catch dùng để
+   • Tách phần giải quyết lỗi ra khỏi phần có thể sinh lỗi
+   • Quy định các loại ngoại lệ được bắt tại mức thực thi hiện hành
+  Cú pháp:
+  try{
+      //Khối lệnh có thể ném ra ngoại lệ
+  }catch(<Exception_class_name> e){
+      //Code xử lý ngoại lệ
+  }
+
+
+- khối try/catch/finally:
+  Cú pháp:
+  try{
+      //Khối lệnh có thể ném ra ngoại lệ
+  }catch(<Exception_class_name_1> e){
+      //Code xử lý ngoại lệ 1
+  }catch(<Exception_class_name_2> e){
+      //Code xử lý ngoại lệ 2
+  }finally{
+      //Khối lệnh trong đây luôn được thực thi
+  }
+
+  + Khối finally là tuỳ chọn, không bắt buộc phải có. Khối này được đặt sau khối catch cuối cùng. Chương trình sẽ thực thi câu lệnh đầu tiên
+  của khối finally ngay sau khi gặp câu lệnh return hay lệnh break trong khối try.
+  + Khối finally bảo đảm lúc nào cũng được thực thi, bất chấp có ngoại lệ xảy ra hay không.
+
+- Các ném ngoại lệ: lệnh throw và throws hoạt động như thế nào
+  + Từ khóa throw được sử dụng để ném ra ngoại lệ cụ thể. Thông thường nó được sử dụng với exception do người dùng tự định nghĩa
+  Ví dụ:
+  System.out.println("Nhập tuổi của bạn:");
+  age = sc.nextInt();
+  //Tuổi không hợp lệ khi nhập số âm hoặc lớn hơn 200
+  if(age < 0 || age > 200)
+      throw new ArithmeticException("Tuổi không hợp lệ");
+
+  + Từ khóa throws sử dụng để khai báo ngoại lệ. Nó được sử dụng chủ yếu với checked exception
+    Ví dụ:
+    public void readFile() throws IOException{ // Khai báo ngoại lệ
+    }
