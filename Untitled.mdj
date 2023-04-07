@@ -273,11 +273,30 @@
 									"model": {
 										"$ref": "AAAAAAGHTykJESNgqog="
 									},
+									"subViews": [
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGHVWFzzet9Fa4=",
+											"_parent": {
+												"$ref": "AAAAAAGHTykJGiNp/gE="
+											},
+											"model": {
+												"$ref": "AAAAAAGHVWFzs+t6R9w="
+											},
+											"font": "Arial;13;0",
+											"left": 477,
+											"top": 214,
+											"width": 174.49072265625,
+											"height": 13,
+											"text": "+showInfo()",
+											"horizontalAlignment": 0
+										}
+									],
 									"font": "Arial;13;0",
 									"left": 472,
 									"top": 209,
 									"width": 184.49072265625,
-									"height": 10
+									"height": 23
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -2378,6 +2397,16 @@
 							},
 							"name": "certificates",
 							"type": "List <Certificate>"
+						}
+					],
+					"operations": [
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGHVWFzs+t6R9w=",
+							"_parent": {
+								"$ref": "AAAAAAGHTykJESNgqog="
+							},
+							"name": "showInfo"
 						}
 					]
 				},
