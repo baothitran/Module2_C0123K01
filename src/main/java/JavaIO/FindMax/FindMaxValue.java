@@ -1,4 +1,4 @@
-package JavaIO;
+package JavaIO.FindMax;
 
 import java.util.List;
 
