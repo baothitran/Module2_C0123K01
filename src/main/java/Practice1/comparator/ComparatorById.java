@@ -1,4 +1,6 @@
-package Practice1;
+package Practice1.comparator;
+
+import Practice1.Employee;
 
 import java.util.Comparator;
 

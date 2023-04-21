@@ -6,6 +6,7 @@ public enum EmployeeType {
     Experience(0), Fresher(1), Intern(2);
     private int id;
     private EmployeeType(int id) {
+
         this.id = id;
     }
 
